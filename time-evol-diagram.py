@@ -9,18 +9,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib import animation
 
-# Define relevant constants.
-lightSpeed = 3 * 10**8
-ejectVel = lightSpeed / np.sqrt(50)
-ismDensity = 1.66 * 10**-20
-heatRatio = 1.625
-
-# Define coefficients by which to multiply appropriate powers of time t for each phase.
-sedovTaylor = ((0.75 / 16) * (lightSpeed**2 / (np.pi * heatRatio * ismDensity))) ** 0.2
-snowPlow = 1.62 * 10 ** 7
-pDrive = 87089.51
-sunMass = 1.989 * 10**30
-
 # Here, we examine the time evolution of a supernova blast radius of a 1.4 solar-mass star.
 m = 1.4
 
