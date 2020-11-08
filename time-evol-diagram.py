@@ -1,29 +1,40 @@
+# Time evolution diagram template. Intended to illustrate how supernova blast radius expands
+#   at a rapidly decreasing rate. The supernova will transition between different phases, at
+#   which the radius is proportional to different powers of time.
+
+# Note: Time is NOT TO SCALE. Please see Jupyter Notebook in this repository for accurate
+#   time scale.
+
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib import animation
 
+# Define relevant constants.
 lightSpeed = 3 * 10**8
 ejectVel = lightSpeed / np.sqrt(50)
 ismDensity = 1.66 * 10**-20
 heatRatio = 1.625
 
+# Define coefficients by which to multiply appropriate powers of time t for each phase.
 sedovTaylor = ((0.75 / 16) * (lightSpeed**2 / (np.pi * heatRatio * ismDensity))) ** 0.2
 snowPlow = 1.62 * 10 ** 7
 pDrive = 87089.51
 sunMass = 1.989 * 10**30
 
+# Here, we examine the time evolution of a supernova blast radius of a 1.4 solar-mass star.
 m = 1.4
 
+# Create plot.
 fig = plt.figure()
 ax = plt.axes(xlim=(-90000, 90000), ylim=(-90000, 90000))
 line, = ax.plot([], [], lw=2)
 
-
+# Initialize plot (i.e. get the animation running).
 def init():
     line.set_data([], [])
     return line,
 
-
+# Animate plot.
 def update(i):
     t = np.linspace(0, 2 * np.pi, 100)
     if i <= 50:
