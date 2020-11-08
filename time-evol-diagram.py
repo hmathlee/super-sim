@@ -15,6 +15,9 @@ m = 1.4
 # Create plot.
 fig = plt.figure()
 ax = plt.axes(xlim=(-90000, 90000), ylim=(-90000, 90000))
+ax.set_title('Supernova Expansion Simulation')
+ax.set_xlabel('x')
+ax.set_ylabel('y')
 ax = plt.gca()
 ax.set_facecolor('#000000')
 line, = ax.plot([], [], lw=2)
