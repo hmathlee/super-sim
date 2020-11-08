@@ -44,7 +44,7 @@ def update(i):
     else:
         rInit = 81000
         r = rInit + (i - 15050)
-        line.set_color("black")
+        line.set_color("white")
     x = r * np.cos(t)
     y = r * np.sin(t)
     line.set_data(x, y)
